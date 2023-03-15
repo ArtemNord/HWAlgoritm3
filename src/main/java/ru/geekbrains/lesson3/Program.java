@@ -21,6 +21,7 @@ public class Program {
         linkedListV2.addFirst(new Employee("Sdfdf", 35));
         linkedListV2.addFirst(new Employee("Pdfdf", 40));
         printList2(linkedListV2);
+        System.out.println();
 
         linkedListV2.revers();
         printList2(linkedListV2);

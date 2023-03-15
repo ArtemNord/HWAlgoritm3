@@ -40,17 +40,20 @@ public class LinkedListV2<T> {
         }
     }
 
-    public void revers() {
-        NodeV2 node = head;
-        NodeV2 temp = head;
-        head = tail;
-        tail = temp;
-
-        while (node.next != null) {
-            temp = node.next;
-            node.next = node.prev;
-            node.prev = temp;
-            node = node.prev;
+    public void revers(){
+        NodeV2 currentNode = head;
+        while (currentNode != null){
+            NodeV2 next = currentNode.next;
+            NodeV2 previous = currentNode.prev;
+            currentNode.next = previous;
+            currentNode.prev = next;
+            if (previous == null){
+                tail = currentNode;
+            }
+            if (next == null){
+                head = currentNode;
+            }
+            currentNode = next;
         }
     }
 
